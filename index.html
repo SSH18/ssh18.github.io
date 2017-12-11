@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>宋圣涵18岁生日快乐</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('./config/media/digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="./config/css/default_dev.css" type="text/css" rel="stylesheet">
+	<link href="./config/css/fonts.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="./config/js/jquery.js"></script>
+	<script type="text/javascript" src="./config/js/garden.js"></script>
+    <script type="text/javascript" src="./config/js/functions_dev.js"></script>
+</head>
+
+<body  style="background: url(./config/media/background.png) repeat-y center center fixed;
+							-webkit-background-size: cover; -moz-background-size: cover;
+							-o-background-size: cover; background-size: cover;">
+	<audio id="bgMusic" src="./config/media/xiangni.mp3" autoplay="" ="autoplay" loop="1" />	</audio>
+	<div id="mainDiv" style="z-index:0">
+		<div id="content">
+			<div id="code" onclick="hideVideo()">
+				<span class="keyword">TO : 宋圣涵</span><br />
+				<span class="keyword">This code</span><span class="space"/><span class="keyword">is developed for you</span><br />
+				<span class="keyword">I want to show some romantics to you</span><br />
+				<span class="keyword">涵哥，18岁生日快乐。</span><br />
+				<span class="keyword">你也知道，直到现在我都没能把你忘掉。<br />很多时候，我就想远远地看着你。</span><span class="space"/><span class="keyword"></span><br />
+				<br /><br />
+				<span class="keyword">不知道现在的你过得怎么样。</span><span class="space"/>
+				<br />
+				<span class="keyword">今天是你18岁的生日，所以我用所学的知识写下这个网页
+					送给你，在这个特殊的日子。<br />但是无论你怎么样，我都希望你能永远开心快乐。</span><span class="space"/><span class="keyword"><br />永远可爱，永远仙女。
+				<span class="placeholder" /><span class="placeholder" />—— 于长轩</span>
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages" style="color: #FF34B3">
+						Happiness accumulates with the tick-tock, 
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu" style="color: #FF34B3">
+						Wherever you go, whatever you do <br />I will be right here waiting for you.<br/><br />
+						<div class="signature" style="color: #FF69B4">生日快乐！</div>
+					</div>
+					<div id="dog">
+						<a id = "movie" onclick="showVideo()">
+							<img id="dogImg" src="./config/media/dog_small.png" onmouseover="dogMouseOver()">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="copyright">
+			<br />
+		</div>
+	</div>
+	<div id="videoDiv">
+			<video id="tiffanyVideo" style="width: 100%; preload="auto" loop="loop" controls="controls"">
+					<source src="./config/media/123123.mp4" type="video/mp4">
+					<source src="./config/media/123123.mp4" type="video/mp4">
+			</video>
+        </div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.toLocaleString();
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "错误信息";
+			msg.innerHTML = "您的浏览器不支持HTML5，请换用其它浏览器"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation(1);
+			}, 430);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 50);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+			$("#movie" ).click(function() {
+  			var music = document.getElementById("bgMusic");
+  			music.pause();
+		});
+		}
+	</script>
+</body>
+</html>
